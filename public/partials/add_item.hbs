@@ -1,0 +1,30 @@
+<section>
+    <div class="container login-signup">
+        <div class="form">
+        <div class="form-heading">
+            Add Items!
+        </div>
+            <form action="/admin/items-upload" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="product_name">Product Name</label>
+                    <input type="text" placeholder="Enter Product Name" id="product_name" name="product_name">
+                </div>
+                <div class="input-group">
+                    <label for="half_plate">Half Plate Price</label>
+                    <input type="text" name="half_plate" id="half_plate" placeholder="Enter half plate price">
+                </div>
+                <div class="input-group">
+                    <label for="full_plate">Full Plate Price</label>
+                    <input type="text" name="full_plate" id="full_plate" placeholder="Enter full plate price">
+                </div>
+                <div class="input-group">
+                    <label for="product_image" class="product_image">Product Image</label>
+                    <input type="file" name="file_image" id="product_image">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn2">Add Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

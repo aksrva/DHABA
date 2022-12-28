@@ -1,0 +1,67 @@
+<section class="mt-2">
+    <div class="container2">
+        {{#if admin}}
+             <div class="add_links">
+                <a href="/admin/add-items" class="btn2">Add items</a>
+            </div>
+        {{/if}}
+        <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Item No</th>
+            <th>Item Name</th>
+            <th>Item Image</th>
+            <th>Half Plate(In RS.)</th>
+            <th>Full Plate(In Rs.)</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if admin}}
+            {{#each items}}
+            <tr>
+                <td>#{{__v}}</td>
+                <td>{{item_name}}</td>
+            <td>
+                <div class="product-img">
+                    <img src="../images/{{item_image}}" alt="">
+                </div>
+            </td>
+                <td>{{half_plate_price}}</td>
+                <td>{{full_plate_price}}</td>
+                <td><a href="admin/edit?item={{_id}}" class="edit-btn">Edit</a> <a href="admin/delete?item={{_id}}" class="delete-btn">delete</a>
+                {{#if available}}
+                    <a href="admin/dect?item={{_id}}" class="act-btn">Activated</a>
+                    {{else}}
+                    <a href="admin/act?item={{_id}}" class="dect-btn">Deactivated</a>
+                {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        {{/if}}
+        {{#if biller}}
+             {{#each items}}
+        <tr>
+            <td>#{{__v}}</td>
+            <td>{{item_name}}</td>
+            <td>
+                                <div class="product-img">
+                    <img src="../images/{{item_image}}" alt="">
+                </div>
+            </td>
+            <td>{{half_plate_price}}</td>
+            <td>{{full_plate_price}}</td>
+            <td><a href="biller/make-bill?pr={{_id}}" class="edit-btn">Make Bill</a></td>
+        </tr>
+        {{/each}}
+        {{/if}}
+    </tbody>
+</table>
+    </div>
+</section>
+
+<script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>

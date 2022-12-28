@@ -1,0 +1,33 @@
+<section>
+    <div class="container login-signup">
+        <div class="form">
+        <div class="form-heading">
+            Edit Items!
+        </div>
+            <form action="/admin/items-update" method="post">
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Product Id" id="product_id" name="product_id" value="{{id}}" hidden>
+                </div>
+                <div class="input-group">
+                    <label for="product_name">Product Name</label>
+                    <input type="text" placeholder="Enter Product Name" id="product_name" name="product_name" value="{{item_name}}">
+                </div>
+                <div class="input-group">
+                    <label for="half_plate">Half Plate Price</label>
+                    <input type="half_plate" name="half_plate" id="half_plate" placeholder="Enter half plate price" value="{{half_plate_price}}">
+                </div>
+                <div class="input-group">
+                    <label for="full_plate">Full Plate Price</label>
+                    <input type="full_plate" name="full_plate" id="full_plate" placeholder="Enter full plate price" value="{{full_plate_price}}">
+                </div>
+                <div class="input-group">
+                    <label for="product_image" class="product_image">Product Image</label>
+                    <input type="file" name="product_image" id="product_image">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn2">Update Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

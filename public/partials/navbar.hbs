@@ -1,0 +1,46 @@
+<section>
+    <div class="f-container">
+        <div class="navbar">
+            <nav class="d-flex justify-spce-arnd algn-center h-100 w-100">
+                <div class="logo">
+                    {{#if admin_name}}
+                    <a href="/admin">Dhaba</a>
+                    {{else}}
+                    {{#if biller_name}}
+                    <a href="/biller">Dhaba</a>
+                    {{else}}
+                    <a href="/">Dhaba</a>
+                    {{/if}}
+                    {{/if}}
+                </div>
+                <div class="links">
+                    <ul class="d-flex list-none">
+                        {{#if admin_name}}
+                        <li><a class="btn mr-1" href="/admin">items</a></li>
+                        <li><a class="btn mr-1" href="/admin/biller">biller</a></li>
+                        <li><a href="/admin/customers" class="btn mr-1">Customers</a></li>
+                        <li class="drop">
+                            <p>{{admin_name}}</p>
+                            <a href="/logout" class="delete-btn w-100">Logout</a>
+                        </li>
+                        <li class="profile-img"><img src="../images/{{admin_image}}" alt=""></li>
+                        {{else}}
+                        {{#if biller_name}}
+                        <li><a class="btn mr-1" href="/biller" class="btn mr-1">items</a></li>
+                        <li><a href="/biller/customers" class="btn mr-1">customer</a></li>
+                        <li class="drop">
+                            <p>{{biller_name}}</p>
+                            <a href="/logout" class="delete-btn w-100">Logout</a>
+                        </li>
+                        <li class="profile-img"><img src="../images/{{biller_image}}" alt=""></li>
+                            {{else}}
+                            <li class="mr-1"><a href="/login" class="btn">Login</a></li>
+                            <li><a href="/signup" class="btn2">Signup</a></li>
+                        {{/if}}
+                        {{/if}}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>

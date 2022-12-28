@@ -1,0 +1,19 @@
+    <section>
+        <div class="container2 mt-2">
+            {{!-- <div class="menu">
+                <a href="/menu" class="btn2">menu</a>
+            </div> --}}
+            <div class="cards">
+               {{#each shops}}
+                 <div class="card">
+                    <div class="product_image">
+                        <img src="../images/{{image}}" alt="">
+                    </div>
+                    <div class="product_name">
+                        <a href="dhaba?db={{shop_name}}">{{shop_name}}</a>
+                    </div>
+                </div>
+               {{/each}}
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,30 @@
+<section>
+    <div class="container login-signup">
+        <div class="form">
+        <div class="form-heading">
+            Login Now!
+        </div>
+            <form action="/logged" method="post">
+                <div class="input-group">
+                    <label for="email_id">Email Id</label>
+                    <input type="email" name="email_id" id="email_id" placeholder="Enter email Address">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="input-group">
+                    <label for="user_type">Select User</label>
+                    <select name="user_type" id="user_type">
+                        <option >Select any one</option>
+                        <option value="admin">Admin</option>
+                        <option value="biller">Biller</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn2">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

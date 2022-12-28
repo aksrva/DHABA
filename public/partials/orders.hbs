@@ -1,0 +1,40 @@
+<section class="mt-2">
+    <div class="container2">
+        <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Item No.</th>
+            <th>Item Name</th>
+            <th>Order Date</th>
+            <th>Order Time</th>
+            <th>Qty</th>
+            <th>plate type</th>
+            <th>per plate price</th>
+            <th>total payment</th>
+            <th>biller name</th>
+        </tr>
+    </thead>
+    <tbody>
+            {{#each orders}}
+            <tr>
+                <td>#{{ind}}</td>
+                <td>{{menu_id}}</td>
+                <td>{{order_date}}</td>
+                <td>{{order_time}}</td>
+                <td>{{quantity}}</td>
+                <td>{{order_plate_type}}</td>
+                <td>{{order_price_per_quantity}}</td>
+                <td>{{order_total_payment}}</td>
+                <td>{{biller_name}}</td>
+            </tr>
+            {{/each}}
+    </tbody>
+</table>
+    </div>
+</section>
+
+<script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>

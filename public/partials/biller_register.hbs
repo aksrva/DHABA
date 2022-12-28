@@ -1,0 +1,38 @@
+<section>
+    <div class="container login-signup">
+        <div class="form">
+        <div class="form-heading">
+            Add Biller!
+        </div>
+            <form action="/admin/add-biller" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="bller_name">Biller Name</label>
+                    <input type="text" placeholder="Enter Biller Name" id="biller_name" name="biller_name">
+                </div>
+                <div class="input-group">
+                    <label for="biller_email">Biller Email Id.</label>
+                    <input type="text" name="biller_email" id="biller_email" placeholder="Enter Biller Email Id.">
+                </div>
+                <div class="input-group">
+                    <label for="biller_contact">Biller contact No.</label>
+                    <input type="text" name="biller_contact" id="biller_contact" placeholder="Enter Biller contact no.">
+                </div>
+                <div class="input-group">
+                    <label for="biller_address">Enter Biller Address</label>
+                    <input type="text" name="biller_address" id="biller_address" placeholder="Enter Biller Address">
+                </div>
+                <div class="input-group">
+                    <label for="biller_password">Enter Biller password</label>
+                    <input type="text" name="biller_password" id="biller_password" placeholder="Enter Biller Password">
+                </div>
+                <div class="input-group">
+                    <label for="profile_image" class="profile_image">Profile Image</label>
+                    <input type="file" name="file_image" id="profile_image">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn2">Add Biller</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

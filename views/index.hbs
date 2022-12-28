@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    
+</head>
+<body>
+    {{!-- Home --}}
+    {{#if homepage}}
+        {{>navbar}}
+        {{> home}}
+    {{/if}}
+    {{!-- menu --}}
+    {{#if menu}}
+        {{>navbar}}
+        {{> menu}}
+    {{/if}}
+    {{!-- signup --}}
+    {{#if isSignup}}
+        {{>navbar}}
+        {{> signup}}
+    {{/if}}
+    {{#if isLogin}}
+        {{>navbar}}
+        {{> login}}
+    {{/if}}
+
+    {{#if admin}}
+        {{>navbar}}
+        {{>table}}
+    {{/if}}
+    {{#if add_item}}
+        {{>navbar}}
+        {{>add_item}}
+    {{/if}}
+    {{#if edit_form}}
+        {{> navbar}}
+        {{>edit_item}}
+    {{/if}}
+    {{#if admin_biller}}
+        {{> navbar}}
+        {{>biller}}
+    {{/if}}
+    {{#if biller_add}}
+        {{> navbar}}
+        {{>biller_register}}
+    {{/if}}
+    {{#if biller_edit}}
+        {{> navbar}}
+        {{>edit_biller}}
+    {{/if}}
+    {{#if admin_customer}}
+        {{> navbar}}
+        {{>customers}}
+    {{/if}}
+    {{#if c_order}}
+        {{> navbar}}
+        {{>orders}}
+    {{/if}}
+
+    {{#if biller}}
+        {{> navbar}}
+        {{>table}}
+    {{/if}}
+    {{#if make_bill}}
+        {{> navbar}}
+        {{>make_bill}}
+    {{/if}}
+    {{#if org_bill}}
+        {{> navbar}}
+        {{> org_bill}}
+    {{/if}}
+    
+    {{#if biller_customer}}
+        {{> navbar}}
+        {{>customers}}
+    {{/if}}
+    {{#if c_order2}}
+        {{> navbar}}
+        {{>orders}}
+    {{/if}}
+    {{#if not_found}}
+        {{>navbar}}
+        {{>404}}
+    {{/if}}
+    {{#if error}}
+    <div class="notification">
+        <p>{{error}}</p>
+        <span class="progress"></span>
+    </div>
+    {{/if}}
+
+
+
+    <script>
+        let x = 0;
+        let drop = document.querySelector(".links ul li.profile-img");
+        drop.addEventListener("click", () => {
+            if(x == 0){
+                document.querySelector(".links ul li.drop").style.display = "block";
+                x = 1;
+            }else{
+                document.querySelector(".links ul li.drop").style.display = "none";
+                x = 0;
+            }
+        });
+    </script>
+</body>
+</html>

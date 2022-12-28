@@ -1,0 +1,49 @@
+<section class="mt-2">
+    <div class="container2">
+        <div class="add_links">
+            <a href="/admin/add-biller" class="btn2">Add Biller</a>
+        </div>
+        <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Item No</th>
+            <th>Biller Name</th>
+            <th>Biller Image</th>
+            <th>Biller Contact</th>
+            <th>Biller Email Id</th>
+            <th>Biller Address</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each items}}
+             <tr>
+            <td>#{{__v}}</td>
+            <td>{{counter_billing_name}}</td>
+            <td>
+                <div class="product-img">
+                    <img src="../images/{{biller_image}}" alt="">
+                </div>
+            </td>
+            <td>{{counter_billing_contact}}</td>
+            <td>{{counter_email_id}}</td>
+            <td>{{counter_billing_address}}</td>
+            <td><a href="biller-edit?biller={{_id}}" class="edit-btn">Edit</a> <a href="biller-delete?biller={{_id}}" class="delete-btn">delete</a>
+            {{#if available}}
+                <a href="biller-dect?biller={{_id}}" class="act-btn">Activated</a>
+                {{else}}
+                <a href="biller-act?biller={{_id}}" class="dect-btn">Deactivated</a>
+            {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+    </div>
+</section>
+
+<script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>

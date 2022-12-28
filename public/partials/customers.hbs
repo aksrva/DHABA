@@ -1,0 +1,44 @@
+<section class="mt-2">
+    <div class="container2">
+        <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Customer No.</th>
+            <th>Customer Name</th>
+            <th>Customer Contact</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+            {{#if admin_customer}}
+                {{#each customers}}
+                <tr>
+                    <td>#{{__v}}</td>
+                    <td>{{customer_name}}</td>
+                    <td>{{customer_mobile}}</td>
+                        <td><a href="/admin/orders?cid={{customer_mobile}}" class="show-order">show orders</a></td>
+                </tr>
+                {{/each}}
+            {{/if}}
+
+
+            {{#if biller_customer}}
+                {{#each customers}}
+                <tr>
+                    <td>#{{__v}}</td>
+                    <td>{{customer_name}}</td>
+                    <td>{{customer_mobile}}</td>
+                    <td><a href="/biller/orders?cid={{customer_mobile}}" class="show-order">show orders</a></td>
+                </tr>
+                {{/each}}
+            {{/if}}
+    </tbody>
+</table>
+    </div>
+</section>
+
+<script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>
